@@ -1,27 +1,26 @@
-console.log("server is started by me...");
+console.log('server is started by me...');
 demoFunc();
 
 function demoFunc() {
-	document.write("hello world");
-	console.log("demo func called");
+	console.log('demo func called');
 
 	let x = 5;
 	// === means value and type bioth equals
 	if (x === 5) {
-		console.log("equal");
+		console.log('equal');
 	} else {
-		console.log("not equal");
+		console.log('not equal');
 	}
 
 	console.log(x);
 	console.log(typeof x);
 
 	const person = {
-		firstName: "John",
-		lastName: "Doe",
+		firstName: 'John',
+		lastName: 'Doe',
 		id: 5566,
 		fullName: function () {
-			return this.firstName + " " + this.lastName;
+			return this.firstName + ' ' + this.lastName;
 		},
 	};
 
@@ -29,14 +28,39 @@ function demoFunc() {
 	console.log(person.fullName());
 	console.log(typeof person);
 
-	let someString = "Hammas Rao".split(" ");
+	let someString = 'Hammas Rao'.split(' ');
 	console.log(someString);
-	someString = "Hammas Rao".slice(0, 2); // will return Ha
+	someString = 'Hammas Rao'.slice(0, 2); // will return Ha
 	console.log(someString);
 
-	const arr = ["Saab", "Volvo", 1];
-	delete arr[0];
+	const arr = ['Saab', 'Volvo', 1];
 	console.log(arr);
 	console.log(arr.length);
 	console.log(typeof arr);
+
+	arr.map((a, index, sameArray) => {
+		console.log('mapped ' + a + ' index ' + index + ' ' + sameArray[1]);
+	});
+
+	localStorage.setItem(1, arr);
+	sessionStorage.setItem(1, arr);
+
+	const setObj = (obj) => {
+		obj.name = 'Hammas "Rao" ';
+	};
+
+	let newObj = {
+		name: 'Ali',
+		phone: '03068513103',
+	};
+
+	setObj(newObj);
+
+	console.log('Name: ' + newObj.name);
+
+	arr.forEach((item) => {
+		console.log('arr ' + item);
+	});
+
+	//indexedDB.open();
 }
